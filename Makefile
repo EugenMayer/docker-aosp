@@ -1,9 +1,11 @@
 DOCKER = docker
-IMAGE = kylemanna/aosp
+IMAGE = eugenmayer/aosp
 
-aosp: Dockerfile
+build: Dockerfile
 	$(DOCKER) build -t $(IMAGE) .
 
-all: aosp
+push:
+	$(DOCKER) push $(IMAGE)
+all: build push
 
 .PHONY: all
