@@ -8,7 +8,7 @@ RUN echo "dash dash/sh boolean false" | debconf-set-selections && \
 # Keep the dependency list as short as reasonable
 RUN apt-get update \
      && apt-get install -y bison g++-multilib git gperf libxml2-utils make zlib1g-dev zip liblz4-tool libncurses5 libssl-dev \
-      python xz-utils \
+      python xz-utils\
       openjdk-8-jdk \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
